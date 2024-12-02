@@ -1,4 +1,5 @@
 import Card from "../components/Elements/Card";
+import CardBalance from "../components/Fragments/Dashboard/CardBalance";
 import MainLayout from "../components/Layouts/MainLayout";
 
 const DashboardPage = () => {
@@ -6,6 +7,7 @@ const DashboardPage = () => {
     <MainLayout type="dashboard">
       {/* top content start*/}
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
+        <CardBalance />
         <Card title="Total Balance" />
         <Card
           title="Goals"

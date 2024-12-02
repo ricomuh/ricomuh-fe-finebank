@@ -1,9 +1,12 @@
+import PropTypes from "prop-types";
+
 const IconWrapper = ({ children }) => (
   <svg
     width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
+    stroke="currentColor"
     xmlns="http://www.w3.org/2000/svg"
   >
     {children}
@@ -237,6 +240,20 @@ const KebabMenuIcon = () => (
   </IconWrapper>
 );
 
+const ArrowUpRight = () => (
+  <IconWrapper>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+    />
+  </IconWrapper>
+);
+
+IconWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export const Icon = {
   Overview: OverviewIcon,
   Balance: BalanceIcon,
@@ -247,4 +264,5 @@ export const Icon = {
   Setting: SettingIcon,
   Logout: LogoutIcon,
   KebabMenu: KebabMenuIcon,
+  ArrowUpRight,
 };
