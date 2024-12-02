@@ -1,4 +1,4 @@
-import MastercardIcon from "../../public/images/Mastercard.png";
+import MastercardIcon from "../../public/images/MasterCard.png";
 import VisacardIcon from "../../public/images/Visacard.png";
 
 export const accounts = [
