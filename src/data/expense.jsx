@@ -14,7 +14,7 @@ export const expensesBreakdowns = [
     category: "Food",
     amount: 350,
     percentage: 8,
-    icon: <Icon.Global />,
+    icon: <Icon.Food />,
     arrow: <Icon.ArrowUp />,
   },
   {
@@ -22,7 +22,7 @@ export const expensesBreakdowns = [
     category: "Transportation",
     amount: 50,
     percentage: 12,
-    icon: <Icon.Global />,
+    icon: <Icon.Transportation />,
     arrow: <Icon.ArrowUp />,
   },
   {
@@ -30,7 +30,7 @@ export const expensesBreakdowns = [
     category: "Entertainment",
     amount: 80,
     percentage: 15,
-    icon: <Icon.Global />,
+    icon: <Icon.Shopping />,
 
     arrow: <Icon.ArrowUp />,
   },
@@ -39,7 +39,7 @@ export const expensesBreakdowns = [
     category: "Shopping",
     amount: 420,
     percentage: 25,
-    icon: <Icon.Global />,
+    icon: <Icon.Shopping />,
 
     arrow: <Icon.ArrowDown />,
   },
@@ -48,7 +48,7 @@ export const expensesBreakdowns = [
     category: "Others",
     amount: 650,
     percentage: 23,
-    icon: <Icon.Global />,
+    icon: <Icon.Others />,
 
     arrow: <Icon.ArrowDown />,
   },

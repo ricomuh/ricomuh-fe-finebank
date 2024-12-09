@@ -9,9 +9,9 @@ const transactions = [
     date: "2023-05-17",
     paymentMethod: "Credit Card",
     amount: 160,
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
     type: "Expense",
-    // icon: <Icon.Shopping />,
+    icon: <Icon.Shopping />,
   },
   {
     id: 2,
@@ -21,9 +21,9 @@ const transactions = [
     date: "2023-05-17",
     paymentMethod: "Credit Card",
     amount: 20,
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
     type: "Expense",
-    // icon: <Icon.Shopping />,
+    icon: <Icon.Shopping />,
   },
   {
     id: 3,
@@ -33,9 +33,9 @@ const transactions = [
     date: "2023-05-17",
     paymentMethod: "Credit Card",
     amount: 12,
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
     type: "Expense",
-    // icon: <Icon.Food />,
+    icon: <Icon.Food />,
   },
   {
     id: 4,
@@ -45,9 +45,9 @@ const transactions = [
     date: "2023-05-17",
     paymentMethod: "Credit Card",
     amount: 15,
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
     type: "Expense",
-    // icon: <Icon.Food />,
+    icon: <Icon.Food />,
   },
   {
     id: 5,
@@ -58,9 +58,9 @@ const transactions = [
     paymentMethod: "Credit Card",
     amount: 10,
     type: "Expense",
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
 
-    // icon: <Icon.Transportation />,
+    icon: <Icon.Transportation />,
   },
   {
     id: 6,
@@ -71,9 +71,9 @@ const transactions = [
     paymentMethod: "Credit Card",
     amount: 20,
     type: "Expense",
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
 
-    // icon: <Icon.Food />,
+    icon: <Icon.Food />,
   },
   {
     id: 7,
@@ -84,9 +84,9 @@ const transactions = [
     paymentMethod: "Credit Card",
     amount: 30,
     type: "Expense",
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
 
-    // icon: <Icon.Shopping />,
+    icon: <Icon.Shopping />,
   },
   {
     id: 8,
@@ -97,9 +97,9 @@ const transactions = [
     paymentMethod: "Credit Card",
     amount: 100,
     type: "Revenue",
-    icon: <Icon.Global />,
+    // icon: <Icon.Global />,
 
-    // icon: <Icon.Others />,
+    icon: <Icon.Others />,
   },
 ];
 
