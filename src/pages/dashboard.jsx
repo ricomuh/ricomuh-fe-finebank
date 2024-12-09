@@ -1,6 +1,8 @@
 import Card from "../components/Elements/Card";
 import { Icon } from "../components/Elements/Icon";
 import CardBalance from "../components/Fragments/Dashboard/CardBalance";
+import CardGoal from "../components/Fragments/Dashboard/CardGoal";
+import CardStatistic from "../components/Fragments/Dashboard/CardStatistic";
 import MainLayout from "../components/Layouts/MainLayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
@@ -84,10 +86,7 @@ const DashboardPage = () => {
       {/* top content start*/}
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
         <CardBalance />
-        <Card
-          title="Goals"
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolore sapiente suscipit nam, vel officia ipsam praesentium earum unde provident nisi corrupti sit? Officia minima maxime magni quaerat id exercitationem."
-        />
+        <CardGoal />
         <Card
           title="Upcoming Bill"
           desc={
@@ -115,7 +114,8 @@ const DashboardPage = () => {
             </div>
           }
         />
-        <Card variant="md:col-span-2" title="Statistics" />
+        {/* <Card variant="md:col-span-2" title="Statistics" /> */}
+        <CardStatistic />
         <Card
           variant="md:col-span-2"
           title="Expenses Breakdown"
