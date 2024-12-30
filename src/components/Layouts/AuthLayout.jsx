@@ -1,13 +1,32 @@
 import { Link } from "react-router-dom";
 import Logo from "../Elements/Logo";
+import PropTypes from "prop-types";
+import { useContext } from "react";
+import { NotifContext } from "../../context/notifContext";
+import SimpleBackdrop from "../Elements/Backdrop";
+import CustomizedSnackbars from "../Elements/SnackBar";
 
 const AuthLayout = (props) => {
   const { children, type } = props;
+
+  const { msg, setMsg, open, setOpen, isLoading, setIsLoading } =
+    useContext(NotifContext);
 
   return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
       {/* container start */}
       <div className="w-full max-w-sm">
+        {isLoading && (
+          <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading} />
+        )}
+        {msg && (
+          <CustomizedSnackbars
+            open={open}
+            setOpen={setOpen}
+            severity={msg.severity}
+            message={msg.desc}
+          />
+        )}
         {/* logo start */}
         <div className="mb-8">
           <Logo />
@@ -160,6 +179,11 @@ const AuthLayout = (props) => {
       {/* container end */}
     </div>
   );
+};
+
+AuthLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default AuthLayout;

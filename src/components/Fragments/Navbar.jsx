@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/themeContext";
 import { AuthContext } from "../../context/authContext";
 import axios from "axios";
+import { NotifContext } from "../../context/notifContext";
 
 const Navbar = () => {
   const themes = [
@@ -17,6 +18,7 @@ const Navbar = () => {
 
   // const [theme, setTheme] = useState(themes[0]);
   const { setTheme } = useContext(ThemeContext);
+  const { setMsg, setOpen, setIsLoading } = useContext(NotifContext);
   const { name, setIsLoggedIn, setName } = useContext(AuthContext);
   const menus = [
     {
@@ -68,6 +70,7 @@ const Navbar = () => {
   const refreshToken = localStorage.getItem("refreshToken");
 
   const handleLogout = async () => {
+    setIsLoading(true);
     try {
       await axios.get("https://jwt-auth-eight-neon.vercel.app/logout", {
         headers: {
@@ -75,18 +78,22 @@ const Navbar = () => {
         },
       });
 
+      setIsLoading(false);
+      setOpen(true);
+      setMsg({ severity: "success", desc: "Logout successful" });
+
       setIsLoggedIn(false);
       setName("");
       localStorage.removeItem("refreshToken");
 
       navigate("/login");
     } catch (error) {
-      // setIsLoading(false);
+      setIsLoading(false);
       console.log(error);
-      // if (error.response) {
-      //   // setOpen(true);
-      //   // setMsg({ severity: "error", desc: error.response.data.msg });
-      // }
+      if (error.response) {
+        // setOpen(true);
+        // setMsg({ severity: "error", desc: error.response.data.msg });
+      }
     }
   };
 

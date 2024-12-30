@@ -13,6 +13,7 @@ import GoalPage from "./pages/goal";
 import ExpensePage from "./pages/expense";
 import { AuthContext } from "./context/authContext";
 import { useContext } from "react";
+import PropTypes from "prop-types";
 
 const App = () => {
   const { isLoggedIn } = useContext(AuthContext);
@@ -22,6 +23,10 @@ const App = () => {
       return <Navigate to="/login" />;
     }
     return children;
+  };
+
+  RequiredAuth.propTypes = {
+    children: PropTypes.node.isRequired,
   };
 
   const myRouter = createBrowserRouter([

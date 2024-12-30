@@ -23,7 +23,7 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   register: PropTypes.object.isRequired,

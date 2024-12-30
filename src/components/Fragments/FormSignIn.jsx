@@ -8,10 +8,10 @@ import CustomizedSnackbars from "../Elements/SnackBar";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
+import { NotifContext } from "../../context/notifContext";
 
 const FormSignIn = () => {
-  const [msg, setMsg] = useState("");
-  const [open, setOpen] = useState(false);
+  const { msg, setMsg, setOpen, setIsLoading } = useContext(NotifContext);
   const {
     register,
     handleSubmit,
@@ -24,6 +24,7 @@ const FormSignIn = () => {
   const navigate = useNavigate();
 
   const handleSignIn = async (data) => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         "https://jwt-auth-eight-neon.vercel.app/login",
@@ -43,6 +44,7 @@ const FormSignIn = () => {
 
       navigate("/");
       // console.log(response);
+      setIsLoading(false);
       setOpen(true);
       setMsg({
         message: "Login successful",
@@ -50,6 +52,7 @@ const FormSignIn = () => {
       });
     } catch (error) {
       if (error.response) {
+        setIsLoading(false);
         // console.log(error.response);
         // setMsg(error.response.data.msg);
         setOpen(true);
