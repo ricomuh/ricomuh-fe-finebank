@@ -1,10 +1,14 @@
+import PropTypes from "prop-types";
+
 const Input = (props) => {
   const {
     type,
     placeholder,
     name,
-    variant = "bg-special-mainBg border border-gray-03",
+    // variant = "bg-special-mainBg border border-gray-03",
+    register,
   } = props;
+  const variant = "bg-special-mainBg border border-gray-03";
 
   return (
     <input
@@ -13,8 +17,16 @@ const Input = (props) => {
       placeholder={placeholder}
       name={name}
       id={name}
+      {...register}
     />
   );
+};
+
+Input.propTypes = {
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  register: PropTypes.object.isRequired,
 };
 
 export default Input;
