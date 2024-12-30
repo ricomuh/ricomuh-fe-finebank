@@ -122,14 +122,6 @@ const FormSignIn = () => {
       >
         Login
       </Button>
-      {msg && (
-        <CustomizedSnackbars
-          open={open}
-          setOpen={setOpen}
-          severity={msg.severity}
-          message={msg.message}
-        />
-      )}
     </form>
   );
 };
