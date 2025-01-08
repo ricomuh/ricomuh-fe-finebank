@@ -6,16 +6,20 @@ import { ThemeContext } from "../../context/themeContext";
 import { NotifContext } from "../../context/notifContext";
 import SimpleBackdrop from "../Elements/Backdrop";
 import CustomizedSnackbars from "../Elements/SnackBar";
+import { DarkThemeContext } from "../../context/darkThemeContext";
 
 const MainLayout = (props) => {
   const { children } = props;
 
   const { theme } = useContext(ThemeContext);
-  const { msg, setMsg, open, setOpen, isLoading, setIsLoading } =
+  const { darkTheme } = useContext(DarkThemeContext);
+  const { msg, open, setOpen, isLoading, setIsLoading } =
     useContext(NotifContext);
   return (
     <div
-      className={`flex bg-special-mainBg w-screen min-h-screen max-w-full ${theme.name}`}
+      className={`flex w-screen min-h-screen max-w-full ${theme.name} ${
+        darkTheme ? "dark bg-gray-900" : "bg-special-mainBg"
+      }`}
     >
       {/* navbar start*/}
       <Navbar />

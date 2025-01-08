@@ -6,6 +6,7 @@ import { ThemeContext } from "../../context/themeContext";
 import { AuthContext } from "../../context/authContext";
 import axios from "axios";
 import { NotifContext } from "../../context/notifContext";
+import { DarkThemeContext } from "../../context/darkThemeContext";
 
 const Navbar = () => {
   const themes = [
@@ -18,6 +19,7 @@ const Navbar = () => {
 
   // const [theme, setTheme] = useState(themes[0]);
   const { setTheme } = useContext(ThemeContext);
+  const { darkTheme, setDarkTheme } = useContext(DarkThemeContext);
   const { setMsg, setOpen, setIsLoading } = useContext(NotifContext);
   const { name, setIsLoggedIn, setName } = useContext(AuthContext);
   const menus = [
@@ -128,6 +130,15 @@ const Navbar = () => {
               onClick={() => setTheme(t)}
             ></div>
           ))}
+        </div>
+        <div className="md:flex md:gap-2">
+          Dark Theme
+          <div
+            className={`${
+              darkTheme ? "bg-[#000000]" : "bg-[#ffffff]"
+            } md:w-6 h-6 rounded-md cursor-pointer mb-2`}
+            onClick={() => setDarkTheme(!darkTheme)}
+          ></div>
         </div>
         <div>
           <NavLink

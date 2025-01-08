@@ -42,6 +42,8 @@ const FormSignIn = () => {
       setIsLoggedIn(true);
       setName(decoded.name);
 
+      localStorage.setItem("name", decoded.name);
+
       navigate("/");
       // console.log(response);
       setIsLoading(false);
